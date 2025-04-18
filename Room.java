@@ -9,6 +9,12 @@ public class Room {
         floor = curFloor;
         odd = o;
     }
+    public Room() {
+        number = 0;
+        nearestStairwell = 'n';
+        floor = 0;
+        odd = false;
+    }
     public int getNumber() {
         return number;
     }
