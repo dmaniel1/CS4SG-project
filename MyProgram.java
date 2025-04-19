@@ -53,12 +53,102 @@ public class MyProgram {
         }
         contra = 0;
         //2nd floor
-        while (contra < 49) {
+        while (contra < 57) {
+            if (contra == 0) {
+                roomList.add(new Room(202,'C',2,false));
+            }
+            if ((contra+204) % 2 == 0) {
+                //even
+                if ((contra+204) >= 206 && (contra+204) <= 212) {
+                    roomList.add(new Room((contra+204),'D',2,false));
+                }
+                else if ((contra+204) >= 214 && (contra+204) <= 222) {
+                    roomList.add(new Room((contra+204),'H',2,false));
+                }
+                else if ((contra+204) >= 224 && (contra+204) <= 234) {
+                    roomList.add(new Room((contra+204),'Z',2,false));
+                }
+                else if ((contra+204) >= 236 && (contra+204) <= 240) {
+                    roomList.add(new Room((contra+204),'H',2,false));
+                }
+                else if ((contra+204) >= 242 && (contra+204) <= 260) {
+                    roomList.add(new Room((contra+204),'J',2,false));
+                }
+            }
+            else {
+                //odd
+                if ((contra+204) >= 205 && (contra+204) <= 213) {
+                    roomList.add(new Room((contra+204),'A',2,true));
+                }
+                else if ((contra+204) >= 215 && (contra+204) <= 225) {
+                    roomList.add(new Room((contra+204),'O',2,true));
+                }
+                else if ((contra+204) >= 229 && (contra+204) <= 239) {
+                    roomList.add(new Room((contra+204),'Z',2,true));
+                }
+                else if ((contra+204) >= 241 && (contra+204) <= 245) {
+                    roomList.add(new Room((contra+204),'O',2,true));
+                }
+                else if ((contra+204) >= 247 && (contra+204) <= 253) {
+                    roomList.add(new Room((contra+204),'M',2,true));
+                }
+                else if ((contra+204) >= 255 && (contra+204) <= 261) {
+                    roomList.add(new Room((contra+204),'N',2,true));
+                }
+            }
             contra++;
         }
         contra = 0;
         //3rd floor
-        while (contra < 58) {
+        while (contra < 59) {
+            if ((contra+302) % 2 == 0) {
+                //even
+                if ((contra+302) >= 302 && (contra+302) <= 306) {
+                    roomList.add(new Room((contra+302),'C',3,false));
+                }
+                else if ((contra+302) >= 308 && (contra+302) <= 312) {
+                    roomList.add(new Room((contra+302),'D',3,false));
+                }
+                else if ((contra+302) >= 314 && (contra+302) <= 320) {
+                    roomList.add(new Room((contra+302),'G',3,false));
+                }
+                else if ((contra+302) == 322) {
+                    roomList.add(new Room(322,'H',3,false));
+                }
+                else if ((contra+302) >= 324 && (contra+302) <= 332) {
+                    roomList.add(new Room((contra+302),'Z',3,false));
+                }
+                else if ((contra+302) >= 334 && (contra+302) <= 338) {
+                    roomList.add(new Room((contra+302),'H',3,false));
+                }
+                else if ((contra+302) >= 340 && (contra+302) <= 360) {
+                    roomList.add(new Room((contra+302),'J',3,false));
+                }
+            }
+            else {
+                //odd
+                if ((contra+302) >= 303 && (contra+302) <= 307) {
+                    roomList.add(new Room((contra+302),'B',3,true));
+                }
+                else if ((contra+302) >= 309 && (contra+302) <= 313) {
+                    roomList.add(new Room((contra+302),'A',3,true));
+                }
+                else if ((contra+302) >= 315 && (contra+302) <= 327) {
+                    roomList.add(new Room((contra+302),'O',3,true));
+                }
+                else if ((contra+302) >= 329 && (contra+302) <= 337) {
+                    roomList.add(new Room((contra+302),'Z',3,true));
+                }
+                else if ((contra+302) >= 339 && (contra+302) <= 343) {
+                    roomList.add(new Room((contra+302),'O',3,true));
+                }
+                else if ((contra+302) >= 345 && (contra+302) <= 353) {
+                    roomList.add(new Room((contra+302),'M',3,true));
+                }
+                else if (contra == 58) {
+                    roomList.add(new Room(361,'M',3,true));
+                }
+            }
             contra++;
         }
         contra = 0;
