@@ -1,6 +1,14 @@
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.net.http.HttpRequest;
+import java.net.URI;
+import java.net.http.HttpRequest.BodyPublishers;
+import java.net.http.HttpResponse.BodyHandlers;
+import java.net.http.HttpClient;
+import java.net.http.HttpResponse;
+import java.io.IOException;
+import java.lang.InterruptedException;
 public class MyProgram {
     public static void main(String[] args) {
         int contra = 0;
@@ -190,14 +198,25 @@ public class MyProgram {
         }
         int closestRoom;
         int destRoom;
+        Scanner scorn = new Scanner(System.in);
+        Scanner scn = new Scanner(System.in);
+        System.out.println("What's today's date? (YYYY-MM-DD)");
+        String date = scn.next();
+        HttpRequest request = HttpRequest.newBuilder()
+		.uri(URI.create("https://dateclock.p.rapidapi.com/time/day-of-week?date=" + date + "locale=en"))
+		.header("x-rapidapi-key", "d990272e03msh12774ad406b455ap1297fajsn8c10e9208fe3")
+		.header("x-rapidapi-host", "dateclock.p.rapidapi.com")
+		.method("GET", HttpRequest.BodyPublishers.noBody())
+		.build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
         Room[] roomArray = new Room[roomList.size()];
         roomArray = roomList.toArray(roomArray);
-        Scanner scn = new Scanner(System.in);
         System.out.println("Heya! What room are you closest to?");
-        closestRoom = scn.nextInt();
+        closestRoom = scorn.nextInt();
         System.out.println("Thanks! Now, what room do you want to get to?");
-        destRoom = scn.nextInt();
-        scn.close();
+        destRoom = scorn.nextInt();
+        scorn.close();
         int gnarly = 0;
         int rn = 100;
         char str = 'Z';
