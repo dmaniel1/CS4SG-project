@@ -3,14 +3,15 @@ import java.util.List;
 import java.util.Scanner;
 import java.net.http.HttpRequest;
 import java.net.URI;
-import java.net.http.HttpRequest.BodyPublishers;
-import java.net.http.HttpResponse.BodyHandlers;
+//import java.net.http.HttpRequest.BodyPublishers;
+//import java.net.http.HttpResponse.BodyHandlers;
 import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
+
 import java.io.IOException;
 import java.lang.InterruptedException;
 public class MyProgram {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException{
         int contra = 0;
         List<Room> roomList = new ArrayList<Room>();
         //1st floor
@@ -199,9 +200,9 @@ public class MyProgram {
         int closestRoom;
         int destRoom;
         Scanner scorn = new Scanner(System.in);
-        Scanner scn = new Scanner(System.in);
         System.out.println("What's today's date? (YYYY-MM-DD)");
-        String date = scn.next();
+        String date = scorn.next();
+        System.out.print("sdfs");
         HttpRequest request = HttpRequest.newBuilder()
 		.uri(URI.create("https://dateclock.p.rapidapi.com/time/day-of-week?date=" + date + "locale=en"))
 		.header("x-rapidapi-key", "d990272e03msh12774ad406b455ap1297fajsn8c10e9208fe3")
