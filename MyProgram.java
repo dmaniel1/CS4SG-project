@@ -1,13 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.net.http.HttpRequest;
-import java.net.URI;
-//import java.net.http.HttpRequest.BodyPublishers;
-//import java.net.http.HttpResponse.BodyHandlers;
-import java.net.http.HttpClient;
-import java.net.http.HttpResponse;
-
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.io.IOException;
 import java.lang.InterruptedException;
 public class MyProgram {
@@ -200,16 +195,9 @@ public class MyProgram {
         int closestRoom;
         int destRoom;
         Scanner scorn = new Scanner(System.in);
-        System.out.println("What's today's date? (YYYY-MM-DD)");
-        String date = scorn.next();
-        HttpRequest request = HttpRequest.newBuilder()
-		.uri(URI.create("https://dateclock.p.rapidapi.com/time/day-of-week?date=" + date + "locale=en"))
-		.header("x-rapidapi-key", "d990272e03msh12774ad406b455ap1297fajsn8c10e9208fe3")
-		.header("x-rapidapi-host", "dateclock.p.rapidapi.com")
-		.method("GET", HttpRequest.BodyPublishers.noBody())
-		.build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+        Date currentDate = new Date();
+        SimpleDateFormat date = new SimpleDateFormat();
+        System.out.println(date.format(currentDate));
         Room[] roomArray = new Room[roomList.size()];
         roomArray = roomList.toArray(roomArray);
         System.out.println("Heya! What room are you closest to?");
