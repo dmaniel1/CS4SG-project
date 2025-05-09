@@ -202,7 +202,6 @@ public class MyProgram {
         Scanner scorn = new Scanner(System.in);
         System.out.println("What's today's date? (YYYY-MM-DD)");
         String date = scorn.next();
-        System.out.print("sdfs");
         HttpRequest request = HttpRequest.newBuilder()
 		.uri(URI.create("https://dateclock.p.rapidapi.com/time/day-of-week?date=" + date + "locale=en"))
 		.header("x-rapidapi-key", "d990272e03msh12774ad406b455ap1297fajsn8c10e9208fe3")
