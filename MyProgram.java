@@ -231,6 +231,10 @@ public class MyProgram {
                 flr = roomArray[gnarly].getFloor();
                 odd = roomArray[gnarly].getOOrE();
             }
+            else {
+                System.out.println("Sorry, but the room you entered, " + closestRoom + ", is not on the map. This room will return incorrect information.");
+                break;
+            }
             gnarly++;
         }
         if (odd) {
@@ -247,6 +251,10 @@ public class MyProgram {
                 str = roomArray[gnarly].getStair();
                 flr = roomArray[gnarly].getFloor();
                 odd = roomArray[gnarly].getOOrE();
+            }
+            else {
+                System.out.println("Sorry, but the room you entered, " + destRoom + ", is not on the map. This room will return incorrect information.");
+                break;
             }
             gnarly++;
         }
