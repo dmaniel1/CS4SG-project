@@ -5,6 +5,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.io.IOException;
 import java.lang.InterruptedException;
+import java.util.TimeZone;
 public class MyProgram {
     public static void main(String[] args) throws IOException, InterruptedException{
         int contra = 0;
@@ -195,8 +196,15 @@ public class MyProgram {
         int closestRoom;
         int destRoom;
         Scanner scorn = new Scanner(System.in);
+        /* Date date = new Date();
+DateFormat cstFormat = new SimpleDateFormat();
+TimeZone cstTime = TimeZone.getTimeZone("CST");
+cstFormat.setTimeZone(cstTime);
+System.out.println("CST Time: " + cstFormat.format(date)); */
         Date currentDate = new Date();
         SimpleDateFormat date = new SimpleDateFormat();
+        TimeZone cstTime =  TimeZone.getTimeZone("CST");
+        date.setTimeZone(cstTime);
         System.out.println(date.format(currentDate));
         Room[] roomArray = new Room[roomList.size()];
         roomArray = roomList.toArray(roomArray);
